@@ -557,8 +557,8 @@
                 <h4>{{ project.name }}</h4>
                 <div class="langs">
                   <div v-for="lang in project.langs" :key="lang" :title="lang" class="img">
-                    <img v-if="lang != 'HTML'" :src="`/imgs/skills-icons/${lang}.svg`" alt="skill-used" />
-                    <img v-else :src="`/imgs/skills-icons/${lang}.png`" alt="skill-used" />
+                    <img v-if="lang != 'HTML'" :src="`/imgs/skills-icons/${lang.toLowerCase()}.svg`" alt="skill-used" />
+                    <img v-else :src="`/imgs/skills-icons/${lang.toLowerCase()}.png`" alt="skill-used" />
                   </div>
                 </div>
                 <!-- <p>{{ project.langs | formatLangs }}</p> -->
