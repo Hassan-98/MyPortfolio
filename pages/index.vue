@@ -1900,7 +1900,7 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    $axios.defaults.baseURL = "http://localhost:4001/"
+    $axios.defaults.baseURL = "https://portfolio-api-hassanali.herokuapp.com"
     const {success: projects} = await $axios.$get("/api/portfolio?limit=6");
     const {success: skills} = await $axios.$get("/api/skills");
     const {success: stats} = await $axios.$get("/api/stats");
