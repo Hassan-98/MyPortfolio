@@ -22,11 +22,19 @@
     justify-content: center;
     .pic-modal-body {
       background: rgba($color: #000, $alpha: 0.5);
-      width: 75%;
-      height: 99%;
+      width: 90%;
+      height: 90%;
+      @include md {
+        width: 90%;
+        height: 70%;
+      }
+      @include sm {
+        width: 90%;
+        height: 55%;
+      }
       @include xs {
         width: 95%;
-        height: 60%;
+        height: 45%;
       }
       padding: 2px;
       border-radius: 10px;
@@ -37,17 +45,15 @@
         position: absolute;
         top: 5px;
         right: 5px;
-        color: #000;
-        background: #fff;
+        color: #fff;
         font-size: 28px;
         border-radius: 50%;
         box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.2);
         cursor: pointer;
       }
       img{
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
+        width: auto;
+        max-height: 100%;
       }
     }
   }

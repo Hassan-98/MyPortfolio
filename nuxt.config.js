@@ -1,18 +1,17 @@
 /* eslint-disable */
 module.exports = {
-  mode: "universal",
-  /*
-   ** Headers of the page
-   */
   head: {
-    title: `Hassan Ali's Website` || "",
+    htmlAttrs: {
+      lang: 'en'
+    },
+    title: "Hassan Ali's Website",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: "Hassan Ali's Portfolio Website"
       }
     ],
     link: [
@@ -23,29 +22,24 @@ module.exports = {
       },
       {
         rel: "stylesheet",
+        href: "/css/all.min.css"
+      },
+      {
+        rel: "stylesheet",
         href: "/css/hover-min.css"
       },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Piedra&family=Roboto+Slab&family=Poppins&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Piedra&family=Roboto+Slab&family=Poppins&display=swap"
       }
     ],
     script: [
       {
-        src: "https://kit.fontawesome.com/4a349e503a.js",
+        src: "/js/bootstrap.bundle.min.js",
         ssr: false
       },
       {
-        src: "/js/jquery-3.3.1.min.js",
-        ssr: false
-      },
-      {
-        src: "/js/popper.min.js",
-        ssr: false
-      },
-      {
-        src: "/js/bootstrap.min.js",
+        src: "/js/jquery-3.6.0.min.js",
         ssr: false
       },
       {
@@ -58,6 +52,15 @@ module.exports = {
       },
       {
         src: "https://cdn.jsdelivr.net/npm/typed.js@2.0.11",
+        ssr: false
+      },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-HRSGV4Z9YH1",
+        ssr: false,
+        async: true
+      },
+      {
+        src: "/js/gtag.js",
         ssr: false
       }
     ]
@@ -96,19 +99,18 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-    "@nuxtjs/style-resources"
+    "@nuxtjs/style-resources",
+    '@nuxt/image'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://portfolio-api-hassanali.herokuapp.com'
-    // baseURL: "http://localhost:4000/"
+    // baseURL: 'https://portfolio-api-hassanali.herokuapp.com'
+    baseURL: "http://localhost:4001/"
   },
   /*
    ** Build configuration

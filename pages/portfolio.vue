@@ -2,39 +2,42 @@
   <div class="home">
     <!-- Portfolio -->
     <section class="portfolio">
-      <img src="/imgs/back/wish.svg" class="background" style="top:25%;left:35%">
-      <img src="/imgs/back/space.svg" class="background" style="top:30%;left:5%">
-      <img src="/imgs/back/space.svg" class="background" style="top:70%;left:90%">
-      <img src="/imgs/back/space2.svg" class="background" style="top:20%;left:90%">
-      <img src="/imgs/back/space2.svg" class="background" style="top:50%;left:10%">
-      <img src="/imgs/back/space3.svg" class="background" style="top:75%;left:5%">
-      <img src="/imgs/back/space3.svg" class="background" style="top:55%;left:85%">
-      <img src="/imgs/back/space4.svg" class="background" style="top:0%;left:68%">
-      <img src="/imgs/back/space4.svg" class="background" style="top:10%;left:15%">
-      <img src="/imgs/back/space5.svg" class="background" style="top:76%;left:42%">
-      <img src="/imgs/back/missile.svg" class="background" style="top:77%;left:20%">
-      <img src="/imgs/back/missile.svg" class="background" style="top:22%;left:60%">
-      <img src="/imgs/back/asteroid.svg" class="background" style="top:45%;left:45%">
-      <img src="/imgs/back/asteroid.svg" class="background" style="top:42%;left:90%">
-      <img src="/imgs/back/wish.svg" class="background" style="top:60%;left:32%;transform:rotate(180deg)">
+      <img alt="decoration background" src="/imgs/back/wish.svg" class="background" style="top:25%;left:35%">
+      <img alt="decoration background" src="/imgs/back/space.svg" class="background" style="top:30%;left:5%">
+      <img alt="decoration background" src="/imgs/back/space.svg" class="background" style="top:70%;left:90%">
+      <img alt="decoration background" src="/imgs/back/space2.svg" class="background" style="top:20%;left:90%">
+      <img alt="decoration background" src="/imgs/back/space2.svg" class="background" style="top:50%;left:10%">
+      <img alt="decoration background" src="/imgs/back/space3.svg" class="background" style="top:75%;left:5%">
+      <img alt="decoration background" src="/imgs/back/space3.svg" class="background" style="top:55%;left:85%">
+      <img alt="decoration background" src="/imgs/back/space4.svg" class="background" style="top:0%;left:68%">
+      <img alt="decoration background" src="/imgs/back/space4.svg" class="background" style="top:10%;left:15%">
+      <img alt="decoration background" src="/imgs/back/space5.svg" class="background" style="top:76%;left:42%">
+      <img alt="decoration background" src="/imgs/back/missile.svg" class="background" style="top:77%;left:20%">
+      <img alt="decoration background" src="/imgs/back/missile.svg" class="background" style="top:22%;left:60%">
+      <img alt="decoration background" src="/imgs/back/asteroid.svg" class="background" style="top:45%;left:45%">
+      <img alt="decoration background" src="/imgs/back/asteroid.svg" class="background" style="top:42%;left:90%">
+      <img alt="decoration background" src="/imgs/back/wish.svg" class="background" style="top:60%;left:32%;transform:rotate(180deg)">
       <div class="container">
         <h1>My Portfolio</h1>
         <div class="row justify-content-center">
           <div v-for="project in portfolio" :key="project._id" class="col-lg-4 col-md-6 col-12 contdiv" data-aos="fade-up" data-aos-duration="1000">
             <div class="project">
-              <img :src="project.thumb">
-              <div class="overlay" @click="open(project.url, true)">
+              <img alt="project thumbnail" :src="project.thumb">
+              <div class="overlay" @click="openProject(project.url, project._id)">
                 <i class="fas fa-external-link-alt" />
               </div>
               <div class="caption">
                 <h4>{{ project.name }}</h4>
                 <div class="langs">
-                  <div class="img" v-for="lang in project.langs" :key="lang" :title="lang">
+                  <div v-for="lang in project.langs" :key="lang" class="img" :title="lang">
                     <img v-if="lang != 'HTML'" :src="`/imgs/skills-icons/${lang}.svg`" alt="skill-used" />
                     <img v-else :src="`/imgs/skills-icons/${lang}.png`" alt="skill-used" />
                   </div>
                 </div>
                 <!-- <p>{{ project.langs | formatLangs }}</p> -->
+              </div>
+              <div class="views">
+                <i class="fas fa-eye"></i> {{ project.views }}
               </div>
             </div>
           </div>
@@ -117,6 +120,7 @@ img.background {
   left: 0;
   width: 100px;
   height: 100px;
+  opacity: var(--decoration-opacity);
 }
 .portfolio {
   padding: 100px 0;
@@ -166,12 +170,9 @@ img.background {
     position: relative;
     margin-bottom: 35px;
     overflow: hidden;
-    height: 500px;
-    @include sm {
-      height: 550px;
-    }
+    height: 550px;
     @include xs {
-      height: 400px;
+      height: 500px;
     }
     & > img {
       border: 5px solid #fff;
@@ -195,6 +196,23 @@ img.background {
       i {
         font-size: 40px;
         color: #fff;
+      }
+    }
+    .views {
+      position: absolute;
+      top: 15px;
+      left: -70px;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 15px;
+      padding: 2px 10px 0;
+      border-radius: 5px;
+      background: rgba($color: #000000, $alpha: 0.7);
+      color: #ccc;
+      z-index: 12;
+      i {
+        font-size: 16px;
+        color: #ccc;
       }
     }
     .caption {
@@ -240,6 +258,10 @@ img.background {
     }
     &:hover {
       box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
+      .views {
+        left: 15px;
+        z-index: 99;
+      }
       .caption {
         bottom: 0px;
         z-index: 99;
@@ -255,7 +277,7 @@ img.background {
   background-size: cover;
   position: relative;
   .decoration1 {
-    background: url("/imgs/decoration.png");
+    background: var(--dividers-image);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -283,6 +305,7 @@ img.background {
       font-family: "Piedra", cursive;
       position: relative;
       margin-bottom: 60px;
+      color: #fff;
       &::after {
         content: "CONTACT";
         opacity: 0.1;
@@ -312,10 +335,12 @@ img.background {
       p {
         margin-top: 0;
         margin-bottom: 20px;
+        color: #fff;
       }
       h4 {
         font-family: "Piedra", cursive;
         letter-spacing: 1.5px;
+        color: #fff;
       }
       .way {
         margin-bottom: 20px;
@@ -324,12 +349,13 @@ img.background {
           padding: 9px;
           background: #fff;
           margin-right: 3px;
-          color: #ffb400;
+          color: #226;
           border-radius: 50%;
           box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.2);
         }
         span {
           font-size: 18px;
+          color: #fff;
         }
       }
       .icons {
@@ -356,8 +382,7 @@ img.background {
             background: $github;
           }
           &:hover {
-            background: #fff;
-            color: #ffb400;
+            transform: translateY(-2px);
           }
         }
       }
@@ -367,20 +392,24 @@ img.background {
       textarea {
         display: block;
         margin-bottom: 10px;
-        background: rgba($color: #000000, $alpha: 0.2);
+        background: rgba($color: #000000, $alpha: 0.3);
         width: 100%;
-        border-radius: 30px;
-        border-top: transparent;
-        border-bottom: transparent;
+        border-radius: 10px;
+        border: 2px double #fff;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.1);
         &::placeholder {
-          color: #fff;
+          color: #ccc;
         }
         &:focus {
+          border-radius: 5px;
+          border-style: solid;
           border-color: #ffb400;
         }
       }
       button {
-        border-radius: 20px;
+        border-radius: 10px;
         background: #fff;
         color: #000;
         border-color: #fff;
@@ -404,61 +433,86 @@ export default {
     }
   },
   methods: {
+    async openProject(link, pid) {
+      window.open(link, '_blank')
+      await this.$axios.$post(`/api/portfolio/view?pid=${pid}`);
+    },
     open(link) {
       window.open(link, '_blank')
     },
     async sendMsg (e) {
-       e.target.textContent = 'Sending...'
-       const { name, email, message } = this
+       e.target.textContent = 'Sending...';
 
-       if (name != '' && email != '' && message != '') {
-         const DataToSend = { fullName: name, email, message }
-         var res = await this.$axios.post('/api/contact', DataToSend)
-         if (res.data._id) {
-           this.name = ''
-           this.email = ''
-           this.message = ''
-            Swal.fire(
-              'Done!',
-              'Your Message Sent Successfully!',
-              'success'
-            )
-         }
-         e.target.textContent = 'Send Message'
-       } else {
-          e.target.textContent = 'Send Message'
-          Swal.fire({
+       const { name, email, message } = this;
+
+       if (name == '' || email == '' || message == '') {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
             icon: 'error',
-            title: 'Failed!',
-            text: 'There are some empty fields!'
+            text: 'Please fill all required fields'
           })
        }
+
+       if (!email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Please enter a valid email address'
+          })
+       }
+
+       if (message.length < 25) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Your message is too short'
+          })
+       }
+
+        const payload = { fullName: name, email, message }
+        var {err} = await this.$axios.post('/api/contact', payload);
+
+        if (err) {
+          e.target.textContent = 'Send Message'
+          return Swal.fire({
+            icon: 'error',
+            title: 'Failed!',
+            text: err
+          })
+        }
+
+        this.name = '';
+        this.email = '';
+        this.message = '';
+
+        Swal.fire('', 'Thank You, Your message delivered', 'success');
+
+        e.target.textContent = 'Send Message'
     }
+  },
+  mounted () {
+    this.$store.commit('endLoading')
   },
   filters: {
      formatLangs (langs) {
         return langs.split(',').join(' | ')
      }
   },
-  async created () {
-    const portfolio = await this.$axios.$get('/api/portfolio')
+  async asyncData({ $axios })  {
+    $axios.defaults.baseURL = "http://localhost:4001/"
+    const {success: projects} = await $axios.$get('/api/portfolio')
 
-     var projects = []
-
-     portfolio.forEach(proj => {
-        var langs = []
+    const portfolio = projects.map(proj => {
         var langsArr = proj.langs.split(",")
-        langsArr.forEach(lang => langs.push(lang.trim()))
+        var langs = langsArr.map(lang => lang.trim())
         proj.langs = langs
-        projects.push(proj)
+        
+        return proj;
      })
 
-    this.portfolio = projects
-
-    const self = this
-    setTimeout(() => {
-      self.$store.commit('endLoading')
-    }, 1000)
-  }
+    return {
+      portfolio
+    }
+  },
 }
 </script>

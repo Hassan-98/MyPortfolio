@@ -17,6 +17,7 @@ module.exports = {
     'vue/attribute-hyphenation': 'off',
     'vue/singleline-html-element-content-newline': 'off',
     'vue/no-use-v-if-with-v-for': 'off',
-    'vue/html-self-closing': 'off'
+    'vue/html-self-closing': 'off',
+    'vue/comment-directive': 'off'
   }
 }

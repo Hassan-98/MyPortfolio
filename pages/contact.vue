@@ -124,6 +124,7 @@ img.background {
   left: 0;
   width: 100px;
   height: 100px;
+  opacity: var(--decoration-opacity);
 }
 .aboutMe {
   padding: 80px 0;
@@ -158,13 +159,12 @@ img.background {
   }
   .box {
     padding: 25px;
-    background: #3E4148;
+    background: var(--services-bg-color);
     border-radius: 8px;
     text-align: center;
     margin-bottom: 35px;
     box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.2);
     font-size: 18px;
-    cursor: pointer;
     i {
       font-size: 56px;
       display: block;
@@ -178,9 +178,11 @@ img.background {
   iframe {
     width: 100%;
     height: 400px;
-    border: 10px solid #3E4148;
+    border: 10px solid var(--services-bg-color);
     box-shadow: 0 3px 7px rgba($color: #000000, $alpha: 0.2);
     border-radius: 15px;
+    position: relative;
+    z-index: 10;
   }
 }
 .contact {
@@ -188,7 +190,7 @@ img.background {
   background-size: cover;
   position: relative;
   .decoration1 {
-    background: url("/imgs/decoration.png");
+    background: var(--dividers-image);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -216,6 +218,7 @@ img.background {
       font-family: "Piedra", cursive;
       position: relative;
       margin-bottom: 60px;
+      color: #fff;
       &::after {
         content: "CONTACT";
         opacity: 0.1;
@@ -245,10 +248,12 @@ img.background {
       p {
         margin-top: 0;
         margin-bottom: 20px;
+        color: #fff;
       }
       h4 {
         font-family: "Piedra", cursive;
         letter-spacing: 1.5px;
+        color: #fff;
       }
       .way {
         margin-bottom: 20px;
@@ -257,12 +262,13 @@ img.background {
           padding: 9px;
           background: #fff;
           margin-right: 3px;
-          color: #ffb400;
+          color: #226;
           border-radius: 50%;
           box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.2);
         }
         span {
           font-size: 18px;
+          color: #fff;
         }
       }
       .icons {
@@ -289,8 +295,7 @@ img.background {
             background: $github;
           }
           &:hover {
-            background: #fff;
-            color: #ffb400;
+            transform: translateY(-2px);
           }
         }
       }
@@ -300,20 +305,24 @@ img.background {
       textarea {
         display: block;
         margin-bottom: 10px;
-        background: rgba($color: #000000, $alpha: 0.2);
+        background: rgba($color: #000000, $alpha: 0.3);
         width: 100%;
-        border-radius: 30px;
-        border-top: transparent;
-        border-bottom: transparent;
+        border-radius: 10px;
+        border: 2px double #fff;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.1);
         &::placeholder {
-          color: #fff;
+          color: #ccc;
         }
         &:focus {
+          border-radius: 5px;
+          border-style: solid;
           border-color: #ffb400;
         }
       }
       button {
-        border-radius: 20px;
+        border-radius: 10px;
         background: #fff;
         color: #000;
         border-color: #fff;
@@ -340,38 +349,58 @@ export default {
       window.open(link, '_blank')
     },
     async sendMsg (e) {
-       e.target.textContent = 'Sending...'
-       const { name, email, message } = this
+       e.target.textContent = 'Sending...';
 
-       if (name != '' && email != '' && message != '') {
-         const DataToSend = { fullName: name, email, message }
-         var res = await this.$axios.post('/api/contact', DataToSend)
-         if (res.data._id) {
-           this.name = ''
-           this.email = ''
-           this.message = ''
-          Swal.fire(
-            'Done!',
-            'Your Message Sent Successfully!',
-            'success'
-          )
-         }
-         e.target.textContent = 'Send Message'
-       } else {
-          e.target.textContent = 'Send Message'
-          Swal.fire({
+       const { name, email, message } = this;
+
+       if (name == '' || email == '' || message == '') {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
             icon: 'error',
-            title: 'Failed!',
-            text: 'There are some empty fields!'
+            text: 'Please fill all required fields'
           })
        }
+
+       if (!email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Please enter a valid email address'
+          })
+       }
+
+       if (message.length < 25) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Your message is too short'
+          })
+       }
+
+        const payload = { fullName: name, email, message }
+        var {err} = await this.$axios.post('/api/contact', payload);
+
+        if (err) {
+          e.target.textContent = 'Send Message'
+          return Swal.fire({
+            icon: 'error',
+            title: 'Failed!',
+            text: err
+          })
+        }
+
+        this.name = '';
+        this.email = '';
+        this.message = '';
+
+        Swal.fire('', 'Thank You, Your message delivered', 'success');
+
+        e.target.textContent = 'Send Message'
+       
     }
   },
-  async created () {
-    const self = this
-    setTimeout(() => {
-      self.$store.commit('endLoading')
-    }, 1000)
+  mounted () {
+    this.$store.commit('endLoading')
   }
 }
 </script>

@@ -1,80 +1,96 @@
 <template>
+  <!-- eslint-disable -->
   <div class="home">
     <PictureModal v-if="$store.state.openPicModal" />
     <!-- ABOUT ME -->
     <section class="aboutMe">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:25%;left:35%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:70%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:20%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:50%;left:10%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:75%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:55%;left:85%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:0%;left:68%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:10%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space5.svg"
           class="background"
           style="top:76%;left:42%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:77%;left:20%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:22%;left:60%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:45%;left:53%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:42%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:60%;left:32%;transform:rotate(180deg)"
@@ -99,24 +115,24 @@
               I'm Hassan Ali
             </h2>
             <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-              I'm Hassan Ali, web developer from Sohag, Egypt. I'm full stack web developer and civil engineer, I have rich experience in website design, building, customization and development, also have good experience with computers and internet.
+              Web developer from Sohag, Egypt. I was born on 22<sup>nd</sup> March 1998, I'm a Full stack web developer and civil engineer graduated from Sohag university on July 2021, I've started learning & practising web development on 2018, I love coding since i was young, almost coding every minute, now i have rich experience in website design, building, customization and development.
             </p>
             <button
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="550"
-              @click="$router.push('/contact')"
+              @click="goToContactPage"
             >
               <i class="fas fa-phone-square-alt" /> Hire Me
             </button>
           </div>
           <div
-            class="col-md-6 col-12"
+            class="col-md-6 col-12 image"
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="200"
           >
-            <img src="/imgs/mypic3.png" />
+            <img alt="my picture" class="myPic" src="/imgs/avatarDark.png" />
           </div>
         </div>
       </div>
@@ -125,36 +141,43 @@
     <section class="numbers">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:25%;left:35%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:20%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:0%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space5.svg"
           class="background"
           style="top:76%;left:42%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:77%;left:70%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:0%;left:60%"
@@ -168,7 +191,7 @@
             class="col-md-3 col-sm-6 col-6 coldiv"
           >
             <div class="part">
-              <img :src="stat.picture" class="icon" />
+              <img alt="statstic image" :src="stat.picture" class="icon" />
               <h1
                 class="timer"
                 data-from="0"
@@ -196,10 +219,10 @@
               data-aos-duration="1000"
               data-aos-delay="100"
             >
-              <img src="/imgs/fastcoding.svg" />
-              <h2>SEO</h2>
+              <img alt="service" src="/imgs/fastcoding.svg" />
+              <h3>SEO</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I write SEO friendly code that helps search engines find and rank your website
               </p>
             </div>
           </div>
@@ -210,10 +233,10 @@
               data-aos-duration="1000"
               data-aos-delay="150"
             >
-              <img src="/imgs/shield.svg" />
-              <h2>Clean Code</h2>
+              <img alt="service" src="/imgs/shield.svg" />
+              <h3>Clean Code</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I write clean and organized code that makes website fast and easy to maintain
               </p>
             </div>
           </div>
@@ -224,10 +247,10 @@
               data-aos-duration="1000"
               data-aos-delay="150"
             >
-              <img src="/imgs/development.svg" />
-              <h2>Development</h2>
+              <img alt="service" src="/imgs/development.svg" />
+              <h3>Development</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I'm expert at developing and building any kind of websites or web applications
               </p>
             </div>
           </div>
@@ -238,10 +261,10 @@
               data-aos-duration="1000"
               data-aos-delay="200"
             >
-              <img src="/imgs/screen.svg" />
-              <h2>Responsive Design</h2>
+              <img alt="service" src="/imgs/screen.svg" />
+              <h3>Responsive Design</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I'm expert at developing and building responsive websites that suites all screens
               </p>
             </div>
           </div>
@@ -252,10 +275,10 @@
               data-aos-duration="1000"
               data-aos-delay="100"
             >
-              <img src="/imgs/brain.svg" />
-              <h2>Creative Work</h2>
+              <img alt="service" src="/imgs/brain.svg" />
+              <h3>Creative Work</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I'm love creating bright websites ideas and develop & build it to be real websites
               </p>
             </div>
           </div>
@@ -266,10 +289,10 @@
               data-aos-duration="1000"
               data-aos-delay="200"
             >
-              <img src="/imgs/support.svg" />
-              <h2>Support</h2>
+              <img alt="service" src="/imgs/support.svg" />
+              <h3>Support</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I always support and help my clients to make the best web development service
               </p>
             </div>
           </div>
@@ -280,76 +303,91 @@
     <section class="skills">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:25%;left:35%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:70%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:20%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:50%;left:10%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:75%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:55%;left:85%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:0%;left:68%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:10%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space5.svg"
           class="background"
           style="top:76%;left:42%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:77%;left:20%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:22%;left:60%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:45%;left:45%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:42%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:60%;left:32%;transform:rotate(180deg)"
@@ -361,15 +399,15 @@
           <div
             v-for="skill in PageData.skills"
             :key="skill._id"
-            class="col-lg-2 col-md-3 col-6"
+            class="col-lg-2 col-md-3 col-4"
             data-aos="zoom-in"
             data-aos-duration="1000"
           >
             <div class="skill">
               <div class="img">
-                <img :src="skill.logo" />
+                <img alt="skill logo" :src="skill.logo" />
               </div>
-              <h3>{{ skill.name }}</h3>
+              <h4>{{ skill.name }}</h4>
             </div>
           </div>
         </div>
@@ -397,7 +435,7 @@
                   <i class="fas fa-quote-right" />
                   <p>{{ client.details }}</p>
                   <h4>{{ client.name }}</h4>
-                  <img :src="client.picture" />
+                  <img alt="client picture" :src="client.picture" />
                 </div>
               </slide>
             </carousel>
@@ -410,76 +448,91 @@
     <section class="portfolio">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:25%;left:35%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:70%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:20%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:50%;left:10%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:75%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:55%;left:85%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:0%;left:68%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:10%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space5.svg"
           class="background"
           style="top:76%;left:42%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:77%;left:20%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:22%;left:60%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:45%;left:45%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:42%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:60%;left:32%;transform:rotate(180deg)"
@@ -496,8 +549,8 @@
             data-aos-duration="1000"
           >
             <div class="project">
-              <img :src="project.thumb" />
-              <div class="overlay" @click="open(project.url, true)">
+              <img alt="project thumbnail" :src="project.thumb" />
+              <div class="overlay" @click="openProject(project.url, project._id)">
                 <i class="fas fa-external-link-alt" />
               </div>
               <div class="caption">
@@ -509,6 +562,9 @@
                   </div>
                 </div>
                 <!-- <p>{{ project.langs | formatLangs }}</p> -->
+              </div>
+              <div class="views">
+                <i class="fas fa-eye"></i> {{ project.views }}
               </div>
             </div>
           </div>
@@ -523,76 +579,91 @@
     <section class="experince">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:25%;left:35%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space.svg"
           class="background"
           style="top:70%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:20%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space2.svg"
           class="background"
           style="top:50%;left:10%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:75%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space3.svg"
           class="background"
           style="top:55%;left:85%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:0%;left:68%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space4.svg"
           class="background"
           style="top:10%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/space5.svg"
           class="background"
           style="top:76%;left:42%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:77%;left:20%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/missile.svg"
           class="background"
           style="top:22%;left:60%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:45%;left:45%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/asteroid.svg"
           class="background"
           style="top:42%;left:90%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/wish.svg"
           class="background"
           style="top:60%;left:32%;transform:rotate(180deg)"
@@ -611,10 +682,10 @@
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                <span
-                  >{{ exp.dateFrom }}
-                  {{ exp.dateTo == "" ? "- Now" : `- ${exp.dateTo}` }}</span
-                >
+                <span>
+                  {{ exp.dateFrom }}
+                  {{ exp.dateTo == "" ? "- Now" : `- ${exp.dateTo}` }}
+                </span>
                 <h3>{{ exp.name }}</h3>
                 <p>{{ exp.details }}</p>
               </div>
@@ -630,10 +701,10 @@
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                <span
-                  >{{ exp.dateFrom }}
-                  {{ exp.dateTo == "" ? "" : `- ${exp.dateTo}` }}</span
-                >
+                <span>
+                  {{ exp.dateFrom }}
+                  {{ exp.dateTo == "" ? "" : `- ${exp.dateTo}` }}
+                </span>
                 <h3>{{ exp.name }}</h3>
                 <p>{{ exp.details }}</p>
               </div>
@@ -646,46 +717,55 @@
     <section class="certificates">
       <div class="background-icons">
         <img
+          alt="decoration background"
           src="/imgs/back/dotsarrow.svg"
           class="background"
           style="top:60%;left:8%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/blur.svg"
           class="background"
           style="top:30%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/blur.svg"
           class="background"
           style="top:75%;left:84%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/medal.svg"
           class="background"
           style="top:35%;left:85%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/medal.svg"
           class="background"
           style="top:50%;left:45%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/medal.svg"
           class="background"
           style="top:80%;left:5%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/winner.svg"
           class="background"
           style="top:75%;left:60%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/winner.svg"
           class="background"
           style="top:15%;left:15%"
         />
         <img
+          alt="decoration background"
           src="/imgs/back/winner.svg"
           class="background"
           style="top:58%;left:90%"
@@ -702,9 +782,12 @@
             data-aos-duration="1200"
           >
             <div class="cert">
-              <img :src="cert.cert" />
-              <div class="overlay" @click="show">
+              <img alt="certificate" :src="cert.cert" />
+              <div class="overlay" @click="showCertificate($event, cert._id)">
                 <i class="far fa-eye" />
+              </div>
+              <div class="views">
+                <i class="fas fa-eye"></i> {{ cert.views }}
               </div>
             </div>
           </div>
@@ -790,16 +873,23 @@ img.background {
   left: 0;
   width: 100px;
   height: 100px;
+  opacity: var(--decoration-opacity);
 }
 .aboutMe {
-  padding: 80px 0;
+  padding: 100px 0;
   position: relative;
+  @include xs {
+    padding: 70px 15px;
+  }
   h1 {
     text-align: center;
     text-transform: uppercase;
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+    @include xs {
+      margin-bottom: 50px;
+    }
     &::after {
       content: "ABOUT ME";
       opacity: 0.1;
@@ -825,7 +915,7 @@ img.background {
   h2 {
     font-weight: bold;
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ffb400;
     font-size: 48px;
     @include xs {
@@ -833,8 +923,8 @@ img.background {
     }
   }
   p {
-    line-height: 2.5;
-    color: #f6f6f6;
+    line-height: 1.8;
+    font-size: 16px;
     @include md {
       line-height: 25px;
     }
@@ -846,12 +936,26 @@ img.background {
     letter-spacing: 5px;
     text-transform: uppercase;
     margin-top: 15px;
-    background: #353752;
+    background: var(--buttons-color);
     border-color: transparent;
     transition: all 0.3s ease-in-out!important;
     font-weight: bold;
+    @include xs {
+      padding: 8px 40px;
+      font-size: 15px;
+    }
     &:hover {
-      background: #ffb400;
+      transform: translateY(-2px);
+    }
+  }
+  .image {
+    text-align: right;
+    img.myPic {
+      width: 476px;
+      height: 443px;
+      @include xs {
+        height: 300px;
+      }
     }
   }
 }
@@ -859,7 +963,7 @@ img.background {
   position: relative;
   padding: 150px 0 100px;
   @include xs {
-    padding: 100px 0 0px;
+    padding: 100px 10px 0px;
   }
   .coldiv {
     @include xs {
@@ -875,18 +979,22 @@ img.background {
     @include xs {
       margin-bottom: 40px;
     }
-    img {
+    img{
       border: 3px double #ffb400;
       padding: 15px;
-      border-radius: 35px;
+      border-radius: 30px;
       position: absolute;
       width: 150px;
       height: 150px;
-      opacity: 0.4;
+      opacity: 0.75;
       top: -125px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1;
+      @include xs {
+        width: 120px;
+        height: 120px;
+      }
     }
     h1 {
       position: relative;
@@ -932,6 +1040,9 @@ img.background {
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+    @include xs {
+      margin-bottom: 70px;
+    }
     &::after {
       content: "SERVICES";
       opacity: 0.1;
@@ -955,25 +1066,27 @@ img.background {
     }
   }
   .service {
-    background: #3e4148;
-    padding: 30px 15px 20px;
-    text-align: center;
+    background: var(--services-bg-color);
+    padding: 25px;
     margin-bottom: 25px;
     border-radius: 5px;
-    cursor: pointer;
-      box-shadow: 0px 2px 2px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05), 0 0 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out !important;
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.4);
+      box-shadow: 0px 6px 6px rgba($color: #000000, $alpha: 0.2);
     }
-    img {
-      width: 85px;
-      height: 85px;
-      margin-bottom: 15px;
+    img{
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
     }
-    h2 {
+    h3 {
       font-family: "Piedra", cursive;
+      margin: 5px 0 0;
+    }
+    p {
+      margin: 5px 0 0;
     }
   }
 }
@@ -986,6 +1099,9 @@ img.background {
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+    @include xs {
+      margin-bottom: 50px;
+    }
     &::after {
       content: "SKILLS";
       opacity: 0.1;
@@ -1014,7 +1130,7 @@ img.background {
     @include xs {
       margin-bottom: 40px;
     }
-    .img {
+    .img{
       width: 140px;
       height: 140px;
       border-radius: 50%;
@@ -1024,13 +1140,21 @@ img.background {
       overflow: hidden;
       display: inline-block;
       margin: 0;
-      img {
+      img{
         width: 100%;
         height: 100%;
       }
+      @include xs {
+        width: 80px;
+        height: 80px;
+        padding: 15px;
+      }
     }
-    h3 {
+    h4 {
       font-family: "Piedra", cursive;
+      @include xs {
+        margin-top: 0;
+      }
     }
   }
   .skill-cir {
@@ -1056,33 +1180,37 @@ img.background {
   background-size: cover;
   position: relative;
   .decoration1 {
-    background: url("/imgs/decoration.png");
+    background: var(--dividers-image);
     background-size: cover;
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
     width: 100%;
     height: 60px;
   }
   .decoration2 {
-    background: url("/imgs/decoration.png");
+    background: var(--dividers-image);
     background-size: cover;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     height: 60px;
     transform: rotate(180deg);
   }
   .overlay {
-    padding: 150px 0 230px;
+    padding: 120px 0 160px;
     position: relative;
+    @include xs {
+      padding: 100px 0 150px;
+    }
     h1 {
       text-align: center;
       text-transform: uppercase;
       font-family: "Piedra", cursive;
       position: relative;
       margin-bottom: 60px;
+      color: #fff;;
       &::after {
         content: "CLIENTS";
         opacity: 0.1;
@@ -1107,7 +1235,7 @@ img.background {
     }
     .slide {
       padding: 25px;
-      background: rgba($color: #3a3c41, $alpha: 0.85);
+      background: var(--clients-bg-color);
       margin: 0 5px;
       border-radius: 7px;
       position: relative;
@@ -1116,7 +1244,7 @@ img.background {
       i {
         font-size: 45px;
       }
-      img {
+      img{
         position: absolute;
         width: 200px;
         height: 200px;
@@ -1150,6 +1278,9 @@ img.background {
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+    @include xs {
+      margin-bottom: 50px;
+    }
     &::after {
       content: "PORTFOLIO";
       opacity: 0.1;
@@ -1189,15 +1320,12 @@ img.background {
     position: relative;
     margin-bottom: 35px;
     overflow: hidden;
-    height: 500px;
-    @include sm {
-      height: 550px;
-    }
+    height: 550px;
     @include xs {
-      height: 400px;
+      height: 500px;
     }
-    & > img {
-      border: 10px solid #3e4148;
+    & > img{
+      border: 10px solid var(--portfolio-borders);
       position: relative;
       z-index: 10;
       height: 100%;
@@ -1211,6 +1339,7 @@ img.background {
       height: 100%;
       background: rgba($color: #3a3c41, $alpha: 0.6);
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -1218,6 +1347,23 @@ img.background {
       i {
         font-size: 40px;
         color: #fff;
+      }
+    }
+    .views {
+      position: absolute;
+      top: 15px;
+      left: -70px;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 15px;
+      padding: 2px 10px 0;
+      border-radius: 5px;
+      background: rgba($color: #000000, $alpha: 0.7);
+      color: #ccc;
+      z-index: 12;
+      i {
+        font-size: 16px;
+        color: #ccc;
       }
     }
     .caption {
@@ -1240,12 +1386,12 @@ img.background {
       }
       .langs {
         margin: 0;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         text-align: center;
         color: #3a3c41;
         display: flex;
         justify-content: center;
-        .img {
+        .img{
             width: 40px;
             height: 40px;
             margin: 0 5px;
@@ -1254,7 +1400,7 @@ img.background {
             border-radius: 15px;
             background: #f8c141;
             box-shadow: inset 0 0 10px rgba($color: #000000, $alpha: 0.1);
-            img {
+            img{
               width: 100%;
               height: 100%;
             }
@@ -1263,6 +1409,10 @@ img.background {
     }
     &:hover {
       box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
+      .views {
+        left: 15px;
+        z-index: 99;
+      }
       .caption {
         bottom: 0px;
         z-index: 99;
@@ -1274,7 +1424,7 @@ img.background {
   }
   button {
     margin: 30px auto;
-    background: #3e4148;
+    background: var(--buttons-color);
     border-color: transparent;
     font-size: 18px;
     i {
@@ -1301,6 +1451,9 @@ img.background {
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+    @include xs {
+      margin-bottom: 50px;
+    }
     &::after {
       content: "EXPERINCE";
       opacity: 0.1;
@@ -1329,7 +1482,7 @@ img.background {
       padding-left: 35px;
     }
     span {
-      background: #3e4148;
+      background: var(--services-bg-color);
       padding: 5px 10px;
       border-radius: 10px;
       box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
@@ -1362,6 +1515,7 @@ img.background {
         content: "\f0b1";
         border-radius: 50%;
         background: #ffb400;
+        color: #fff;
         padding: 8px 12px;
         position: absolute;
         top: 0;
@@ -1381,6 +1535,7 @@ img.background {
         font-weight: 900;
         content: "\f19d";
         border-radius: 50%;
+        color: #fff;
         background: #ffb400;
         padding: 8px 10px;
         position: absolute;
@@ -1402,6 +1557,9 @@ img.background {
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 120px;
+    @include xs {
+      margin-bottom: 50px;
+    }
     &::after {
       content: "CERTIFICATES";
       opacity: 0.1;
@@ -1419,7 +1577,7 @@ img.background {
         top: -20px;
       }
       @include sm {
-        font-size: 45px;
+        font-size: 40px;
         top: -5px;
       }
     }
@@ -1428,8 +1586,8 @@ img.background {
     position: relative;
     margin-bottom: 30px;
     overflow: hidden;
-    img {
-      border: 5px solid #fff;
+    img{
+      border: 5px solid #ededed;
       position: relative;
       z-index: 10;
       height: 100%;
@@ -1453,10 +1611,30 @@ img.background {
         color: #fff;
       }
     }
+    .views {
+      position: absolute;
+      top: 15px;
+      left: -70px;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 15px;
+      padding: 2px 10px 0;
+      border-radius: 5px;
+      background: rgba($color: #000000, $alpha: 0.3);
+      color: #ccc;
+      z-index: 12;
+      i {
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
     &:hover {
       box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
       .overlay {
         transform: translateX(0) !important;
+      }
+      .views {
+        left: 15px;
       }
     }
   }
@@ -1466,10 +1644,10 @@ img.background {
   background-size: cover;
   position: relative;
   .decoration1 {
-    background: url("/imgs/decoration.png");
+    background: var(--dividers-image);
     background-size: cover;
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
     width: 100%;
     height: 60px;
@@ -1478,7 +1656,7 @@ img.background {
     background: url("/imgs/decoration-black.png");
     background-size: cover;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     height: 60px;
@@ -1494,6 +1672,7 @@ img.background {
       font-family: "Piedra", cursive;
       position: relative;
       margin-bottom: 60px;
+      color: #fff;
       &::after {
         content: "CONTACT";
         opacity: 0.1;
@@ -1523,10 +1702,12 @@ img.background {
       p {
         margin-top: 0;
         margin-bottom: 20px;
+        color: #fff;
       }
       h4 {
         font-family: "Piedra", cursive;
         letter-spacing: 1.5px;
+        color: #fff;
       }
       .way {
         margin-bottom: 20px;
@@ -1535,12 +1716,13 @@ img.background {
           padding: 9px;
           background: #fff;
           margin-right: 3px;
-          color: #ffb400;
+          color: #226;
           border-radius: 50%;
           box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.2);
         }
         span {
           font-size: 18px;
+          color: #fff;
         }
       }
       .icons {
@@ -1567,8 +1749,7 @@ img.background {
             background: $github;
           }
           &:hover {
-            background: #fff;
-            color: #ffb400;
+            transform: translateY(-2px);
           }
         }
       }
@@ -1578,20 +1759,24 @@ img.background {
       textarea {
         display: block;
         margin-bottom: 10px;
-        background: rgba($color: #000000, $alpha: 0.2);
+        background: rgba($color: #000000, $alpha: 0.3);
         width: 100%;
-        border-radius: 30px;
-        border-top: transparent;
-        border-bottom: transparent;
+        border-radius: 10px;
+        border: 2px double #fff;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.1);
         &::placeholder {
-          color: #fff;
+          color: #ccc;
         }
         &:focus {
+          border-radius: 5px;
+          border-style: solid;
           border-color: #ffb400;
         }
       }
       button {
-        border-radius: 20px;
+        border-radius: 10px;
         background: #fff;
         color: #000;
         border-color: #fff;
@@ -1602,14 +1787,14 @@ img.background {
 }
 .swal2-html-container {
   color: #595959;
-  font-family: "Piedra", cursive;
 }
 </style>
 
 <script>
+/* eslint-disable */
 import Swal from 'sweetalert2'
 import PictureModal from '../components/PictureModal.vue'
-/* eslint-disable */
+
 export default {
   components: {
     PictureModal
@@ -1630,6 +1815,10 @@ export default {
     };
   },
   methods: {
+    async openProject(link, pid) {
+      window.open(link, "_blank");
+      await this.$axios.$post(`/api/portfolio/view?pid=${pid}`);
+    },
     open(link, blank) {
       if (blank) {
         window.open(link, "_blank");
@@ -1637,82 +1826,107 @@ export default {
         location.href = link;
       }
     },
-    show(e) {
-      if (e.target.classList.contains("overlay"))
-        var img = e.target.previousElementSibling.src;
-      else var img = e.target.parentElement.previousElementSibling.src;
+    async showCertificate(e, cid) {
+      var img= null;
+      if (e.target.classList.contains("overlay")) img= e.target.previousElementSibling.src;
+      else img= e.target.parentElement.previousElementSibling.src;
       this.$store.commit("openPicModal", img);
+      await this.$axios.$post(`/api/certs/view?cid=${cid}`);
     },
-    async sendMsg(e) {
-      e.target.textContent = "Sending...";
-      const { name, email, message } = this;
+    async sendMsg (e) {
+       e.target.textContent = 'Sending...';
 
-      if (name != "" && email != "" && message != "") {
-        const DataToSend = { fullName: name, email, message };
-        var res = await this.$axios.post("/api/contact", DataToSend);
-        if (res.data._id) {
-          this.name = "";
-          this.email = "";
-          this.message = "";
-          Swal.fire(
-            'Done!',
-            'Your Message Sent Successfully!',
-            'success'
-          )
+       const { name, email, message } = this;
+
+       if (name == '' || email == '' || message == '') {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Please fill all required fields'
+          })
+       }
+
+       if (!email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Please enter a valid email address'
+          })
+       }
+
+       if (message.length < 25) {
+          e.target.textContent = 'Send Message';
+          return Swal.fire({
+            icon: 'error',
+            text: 'Your message is too short'
+          })
+       }
+
+        const payload = { fullName: name, email, message }
+        var {err} = await this.$axios.post('/api/contact', payload);
+
+        if (err) {
+          e.target.textContent = 'Send Message'
+          return Swal.fire({
+            icon: 'error',
+            title: 'Failed!',
+            text: err
+          })
         }
-        e.target.textContent = "Send Message";
-      } else {
-        e.target.textContent = "Send Message";
-        Swal.fire({
-          icon: 'error',
-          title: 'Failed!',
-          text: 'There are some empty fields!'
-        })
-      }
+
+        this.name = '';
+        this.email = '';
+        this.message = '';
+
+        Swal.fire('', 'Thank You, Your message delivered', 'success');
+
+        e.target.textContent = 'Send Message'
+    },
+    goToContactPage() {
+      window.location.href = '/contact'
     }
   },
   mounted() {
-    $(".numbers").on("inview", function(event, visible) {
+    $(".numbers").on("inview", function(e, visible) {
       if (visible == true) {
         $(".timer").countTo("restart");
       }
     });
+    this.$store.commit("endLoading");
   },
   filters: {
     formatLangs(langs) {
       return langs.split(",");
     }
   },
-  async created() {
-    const portfolio = await this.$axios.$get("/api/portfolio");
-    const skills = await this.$axios.$get("/api/skills");
-    const stats = await this.$axios.$get("/api/stats");
-    const certs = await this.$axios.$get("/api/certs");
-    const clients = await this.$axios.$get("/api/clients");
-    const exps = await this.$axios.$get("/api/exps");
+  async asyncData({ $axios }) {
+    $axios.defaults.baseURL = "http://localhost:4001/"
+    const {success: projects} = await $axios.$get("/api/portfolio?limit=6");
+    const {success: skills} = await $axios.$get("/api/skills");
+    const {success: stats} = await $axios.$get("/api/stats");
+    const {success: certs} = await $axios.$get("/api/certs");
+    const {success: clients} = await $axios.$get("/api/clients");
+    const {success: exps} = await $axios.$get("/api/exps");
 
-    const limitedPortfolio = portfolio.filter((proj, i) => {
-      if (i < 6) {
-        var langsArr = proj.langs.split(",")
-        var langs = []
-        langsArr.forEach(lang => langs.push(lang.trim()))
-        proj.langs = langs
-        return proj;
-      }
+    const portfolio = projects.map(proj => {
+      var langs = []
+      var langsArr = proj.langs.split(",")
+      langsArr.forEach(lang => langs.push(lang.trim()))
+      proj.langs = langs
+
+      return proj;
     });
 
-    this.PageData = {
-      portfolio: limitedPortfolio,
-      skills,
-      stats,
-      certs,
-      clients,
-      exps
-    };
-    const self = this;
-    setTimeout(() => {
-      self.$store.commit("endLoading");
-    }, 1000);
-  }
+    return {
+      PageData: {
+        portfolio,
+        skills,
+        stats,
+        certs,
+        clients,
+        exps
+      }
+    }
+  },
 };
 </script>

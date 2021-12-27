@@ -260,9 +260,23 @@ img {
   }
 }
 
+// Dark
+:root {
+  --text-color: #fff;
+  --header-bg: url("/imgs/headerDark.png");
+  --header-overlay: rgba(0, 0, 0, 0.4);
+  --header-colors: #fff;
+  --decoration-opacity: 1;
+  --buttons-color: #3E4148;
+  --services-bg-color: #3E4148;
+  --clients-bg-color: rgba(58, 60, 65, 0.85);
+  --dividers-image: url("/imgs/decorationDark.png");
+  --portfolio-borders: #3E4148;
+}
+
 *:not(i) {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
+  font-family: GTWalsheimPro, sans-serif;
+  color: var(--text-color);
 }
 
 ::-moz-selection {
@@ -273,4 +287,13 @@ img {
 ::selection {
   background: #ffc300;
   color: #fff;
+}
+
+.swal2-html-container {
+  color: #262626;
+}
+
+@font-face {
+  font-family: GTWalsheimPro;
+  src: url("/fonts/GTWalsheimPro-Light.ttf");
 }
