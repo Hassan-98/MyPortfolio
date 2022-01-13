@@ -273,7 +273,7 @@ img.background {
   }
 }
 .contact {
-  background: url("/imgs/contact2.png");
+  background: url("/imgs/contact.webp");
   background-size: cover;
   position: relative;
   .decoration1 {

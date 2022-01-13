@@ -2,21 +2,21 @@
   <div class="home">
     <!-- ABOUT ME -->
     <section class="aboutMe">
-      <img src="/imgs/back/wish.svg" class="background" style="top:25%;left:35%">
-      <img src="/imgs/back/space.svg" class="background" style="top:30%;left:5%">
-      <img src="/imgs/back/space.svg" class="background" style="top:70%;left:90%">
-      <img src="/imgs/back/space2.svg" class="background" style="top:20%;left:90%">
-      <img src="/imgs/back/space2.svg" class="background" style="top:50%;left:10%">
-      <img src="/imgs/back/space3.svg" class="background" style="top:75%;left:5%">
-      <img src="/imgs/back/space3.svg" class="background" style="top:55%;left:85%">
-      <img src="/imgs/back/space4.svg" class="background" style="top:0%;left:68%">
-      <img src="/imgs/back/space4.svg" class="background" style="top:10%;left:15%">
-      <img src="/imgs/back/space5.svg" class="background" style="top:76%;left:42%">
-      <img src="/imgs/back/missile.svg" class="background" style="top:77%;left:20%">
-      <img src="/imgs/back/missile.svg" class="background" style="top:22%;left:60%">
-      <img src="/imgs/back/asteroid.svg" class="background" style="top:45%;left:53%">
-      <img src="/imgs/back/asteroid.svg" class="background" style="top:42%;left:90%">
-      <img src="/imgs/back/wish.svg" class="background" style="top:60%;left:32%;transform:rotate(180deg)">
+      <img src="/imgs/back/wish.svg" class="background" style="top:25%;left:35%" alt="decoration">
+      <img src="/imgs/back/space.svg" class="background" style="top:30%;left:5%" alt="decoration">
+      <img src="/imgs/back/space.svg" class="background" style="top:70%;left:90%" alt="decoration">
+      <img src="/imgs/back/space2.svg" class="background" style="top:20%;left:90%" alt="decoration">
+      <img src="/imgs/back/space2.svg" class="background" style="top:50%;left:10%" alt="decoration">
+      <img src="/imgs/back/space3.svg" class="background" style="top:75%;left:5%" alt="decoration">
+      <img src="/imgs/back/space3.svg" class="background" style="top:55%;left:85%" alt="decoration">
+      <img src="/imgs/back/space4.svg" class="background" style="top:0%;left:68%" alt="decoration">
+      <img src="/imgs/back/space4.svg" class="background" style="top:10%;left:15%" alt="decoration">
+      <img src="/imgs/back/space5.svg" class="background" style="top:76%;left:42%" alt="decoration">
+      <img src="/imgs/back/missile.svg" class="background" style="top:77%;left:20%" alt="decoration">
+      <img src="/imgs/back/missile.svg" class="background" style="top:22%;left:60%" alt="decoration">
+      <img src="/imgs/back/asteroid.svg" class="background" style="top:45%;left:53%" alt="decoration">
+      <img src="/imgs/back/asteroid.svg" class="background" style="top:42%;left:90%" alt="decoration">
+      <img src="/imgs/back/wish.svg" class="background" style="top:60%;left:32%;transform:rotate(180deg)" alt="decoration">
       <div class="container">
         <h1>Contact Me</h1>
         <div class="row">
@@ -41,7 +41,7 @@
           <div class="col-12">
             <div class="mapouter">
               <div class="gmap_canvas">
-                <iframe src="https://maps.google.com/maps?q=sohag&t=&z=13&ie=UTF8&iwloc=&output=embed" />
+                <iframe src="https://maps.google.com/maps?q=sohag&t=&z=13&ie=UTF8&iwloc=&output=embed" title="google map to my location" />
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ img.background {
   }
 }
 .contact {
-  background: url("/imgs/contact2.png");
+  background: url("/imgs/contact.webp");
   background-size: cover;
   position: relative;
   .decoration1 {

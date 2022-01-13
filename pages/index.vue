@@ -1176,7 +1176,7 @@ img.background {
   }
 }
 .clients {
-  background: url("/imgs/clients.png");
+  background: url("/imgs/clients.webp");
   background-size: cover;
   position: relative;
   .decoration1 {
@@ -1640,7 +1640,7 @@ img.background {
   }
 }
 .contact {
-  background: url("/imgs/contact2.png");
+  background: url("/imgs/contact.webp");
   background-size: cover;
   position: relative;
   .decoration1 {

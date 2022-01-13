@@ -537,7 +537,7 @@ export default {
         const ROOT_STYLE = document.querySelector(":root").style;
 
         ROOT_STYLE.setProperty("--text-color", `#3E4148`);
-        ROOT_STYLE.setProperty("--header-bg", `url("/imgs/headerLight.png")`);
+        ROOT_STYLE.setProperty("--header-bg", `url("/imgs/headerLight.webp")`);
         ROOT_STYLE.setProperty("--header-overlay", `rgba(0, 0, 0, 0.2)`);
         ROOT_STYLE.setProperty("--header-colors", `#8a9ae1`);
         ROOT_STYLE.setProperty("--decoration-opacity", `0.05`);
@@ -570,7 +570,7 @@ export default {
         const ROOT_STYLE = document.querySelector(":root").style;
 
         ROOT_STYLE.setProperty("--text-color", `#fff`);
-        ROOT_STYLE.setProperty("--header-bg", `url("/imgs/headerDark.png")`);
+        ROOT_STYLE.setProperty("--header-bg", `url("/imgs/headerDark.webp")`);
         ROOT_STYLE.setProperty("--header-overlay", `rgba(0, 0, 0, 0.4)`);
         ROOT_STYLE.setProperty("--header-colors", `#fff`);
         ROOT_STYLE.setProperty("--decoration-opacity", `1`);
