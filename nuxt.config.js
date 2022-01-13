@@ -8,11 +8,16 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { 'http-equiv': "Content-Type", content: "text/html; charset=utf-8" },
       {
         hid: "description",
         name: "description",
         content: "Hassan Ali's Portfolio Website"
-      }
+      },
+      {
+        name: "keywords", content: "Hassan, Ali, Hassan Ali, Hassan Ali's Portfolio, Hassan Ali's Website, Hassan Ali's Portfolio Website, Hassan Portfolio, Hassan Portfolio Website"
+      },
+      { name: "google-site-verification", content: "_U2xB66Sbt6dFzxjqW99iSxKgr47T7RwA621oA5G2Tk" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/logo.png" },
@@ -109,8 +114,8 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    // baseURL: 'https://portfolio-api-hassanali.herokuapp.com'
-    baseURL: "http://localhost:4001/"
+    baseURL: 'https://portfolio-api-hassanali.herokuapp.com'
+    // baseURL: "http://localhost:4001/"
   },
   /*
    ** Build configuration
