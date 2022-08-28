@@ -115,7 +115,7 @@
               I'm Hassan Ali
             </h2>
             <p data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-              Web developer from Sohag, Egypt. I was born on 22<sup>nd</sup> March 1998, I'm a Full stack web developer and civil engineer graduated from Sohag university on July 2021, I've started learning & practising web development on 2018, I love coding since i was young, almost coding every minute, now i have rich experience in website design, building, customization and development.
+              MERN-Stack developer from Egypt, I was born on 22<sup>nd</sup> March 1998, I am a friendly, helpful and hard working person. I am a good timekeeper, always willing to learn new skills. I am able to work independently in busy environments and also within a team setting. I am outgoing and tactful, and able to listen effectively when solving problems.
             </p>
             <button
               data-aos="fade-up"

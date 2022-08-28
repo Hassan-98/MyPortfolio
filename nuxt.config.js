@@ -114,7 +114,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://portfolio-api-hassanali.herokuapp.com'
+    baseURL: 'https://portfolio-dashboard-api.onrender.com'
     // baseURL: "http://localhost:4001/"
   },
   /*
