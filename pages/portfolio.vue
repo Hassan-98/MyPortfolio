@@ -499,7 +499,7 @@ export default {
      }
   },
   async asyncData({ $axios })  {
-    $axios.defaults.baseURL = "https://portfolio-api-hassanali.herokuapp.com"
+    $axios.defaults.baseURL = "https://portfolio-dashboard-api.onrender.com"
     const {success: projects} = await $axios.$get('/api/portfolio')
 
     const portfolio = projects.map(proj => {
