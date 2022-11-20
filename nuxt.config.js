@@ -109,21 +109,28 @@ module.exports = {
     "@nuxtjs/style-resources",
     '@nuxt/image'
   ],
+  env: {
+    baseURL: process.env.API_URL
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://portfolio-dashboard-api.onrender.com'
+    baseURL: 'http://portfolio-api.hassanali94.repl.co'
     // baseURL: "http://localhost:4001/"
   },
   /*
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+    loaders: {
+      sass: {
+        implementation: require('sass'),
+      },
+      scss: {
+        implementation: require('sass'),
+      },
+    },
   }
 };

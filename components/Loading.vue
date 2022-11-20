@@ -90,6 +90,7 @@
 
 <script>
 export default {
+  name: "loading",
   methods: {
     closeModal (e) {
       if (e.target.classList.contains('chat-modal') || e.target.tagName === 'I') { this.$store.commit('closeModal') }

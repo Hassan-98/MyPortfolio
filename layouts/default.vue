@@ -33,7 +33,7 @@ html, body {
 <script>
 import Header from '~/components/Header'
 import Footer from '~/components/Footer'
-import Loading from '~/components/Loading.vue'
+import Loading from '../components/Loading'
 export default {
   components: {
     Header,

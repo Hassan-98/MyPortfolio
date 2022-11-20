@@ -353,17 +353,38 @@ header {
           }
 
           &.theme_mode {
-            padding: 3px 12px 1px;
-            background: rgba($color: #fff, $alpha: 0.2);
-            color: #fff;
-            border: none;
+            // padding: 12px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8e21e29;
+            color: #ffe500;
+            border: 0.5px solid #f8e21e1c;
             outline: none;
             transition: all 0.3s ease;
             position: relative;
-            top: 2px;
+            left: 3px;
+
+            &.light {
+              background: rgba($color: #fff, $alpha: 0.2);
+              color: #fff;
+              border: 0.5px solid #ffffff3d;
+            }
+
             @include md {
               display: block;
               margin: 5px auto;
+            }
+
+            i {
+              position: relative;
+              top: -2px;
+            }
+
+            &:hover {
+              transform: none;
             }
           }
         }
@@ -526,12 +547,13 @@ export default {
         window.open(link, "_blank");
       }
     },
-    toggleMode() {
+    toggleMode(e) {
       var isDark = this.isDark;
 
       if (isDark) {
         document.querySelector(".theme_mode").closest(".nav-item").querySelector("i").classList.remove("fa-sun");
         document.querySelector(".theme_mode").closest(".nav-item").querySelector("i").classList.add("fa-moon");
+        document.querySelector('.theme_mode').classList.add('light');
 
         // Set Light Mode
         const ROOT_STYLE = document.querySelector(":root").style;
@@ -565,6 +587,7 @@ export default {
       } else {
         document.querySelector(".theme_mode").closest(".nav-item").querySelector("i").classList.remove("fa-moon");
         document.querySelector(".theme_mode").closest(".nav-item").querySelector("i").classList.add("fa-sun");
+        document.querySelector('.theme_mode').classList.remove('light');
         
         // Set Dark Mode
         const ROOT_STYLE = document.querySelector(":root").style;

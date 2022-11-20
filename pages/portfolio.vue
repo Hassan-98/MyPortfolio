@@ -436,6 +436,10 @@ export default {
     async openProject(link, pid) {
       window.open(link, '_blank')
       await this.$axios.$post(`/api/portfolio/view?pid=${pid}`);
+      this.portfolio = this.portfolio.map(project => {
+        if (project._id === pid) project.views += 1;
+        return project;
+      });
     },
     open(link) {
       window.open(link, '_blank')
@@ -470,7 +474,7 @@ export default {
        }
 
         const payload = { fullName: name, email, message }
-        var {err} = await this.$axios.post('/api/contact', payload);
+        var { err } = await this.$axios.post('/api/contact', payload);
 
         if (err) {
           e.target.textContent = 'Send Message'
@@ -485,7 +489,7 @@ export default {
         this.email = '';
         this.message = '';
 
-        Swal.fire('', 'Thank You, Your message delivered', 'success');
+        Swal.fire('', 'Thank You, Your message is delivered', 'success');
 
         e.target.textContent = 'Send Message'
     }
@@ -499,14 +503,12 @@ export default {
      }
   },
   async asyncData({ $axios })  {
-    $axios.defaults.baseURL = "https://portfolio-dashboard-api.onrender.com"
+    $axios.defaults.baseURL = process.env.baseURL;
+    
     const {success: projects} = await $axios.$get('/api/portfolio')
 
     const portfolio = projects.map(proj => {
-        var langsArr = proj.langs.split(",")
-        var langs = langsArr.map(lang => lang.trim())
-        proj.langs = langs
-        
+        proj.langs = proj.langs.split(",").map(lang => lang.trim())
         return proj;
      })
 
