@@ -16,11 +16,13 @@
       <img alt="decoration background" src="/imgs/back/missile.svg" class="background" style="top:22%;left:60%">
       <img alt="decoration background" src="/imgs/back/asteroid.svg" class="background" style="top:45%;left:45%">
       <img alt="decoration background" src="/imgs/back/asteroid.svg" class="background" style="top:42%;left:90%">
-      <img alt="decoration background" src="/imgs/back/wish.svg" class="background" style="top:60%;left:32%;transform:rotate(180deg)">
+      <img alt="decoration background" src="/imgs/back/wish.svg" class="background"
+        style="top:60%;left:32%;transform:rotate(180deg)">
       <div class="container">
         <h1>My Portfolio</h1>
         <div class="row justify-content-center">
-          <div v-for="project in portfolio" :key="project._id" class="col-lg-4 col-md-6 col-12 contdiv" data-aos="fade-up" data-aos-duration="1000">
+          <div v-for="project in portfolio" :key="project._id" class="col-lg-4 col-md-6 col-12 contdiv"
+            data-aos="fade-up" data-aos-duration="1000">
             <div class="project">
               <img alt="project thumbnail" :src="project.thumb">
               <div class="overlay" @click="openProject(project.url, project._id)">
@@ -69,39 +71,18 @@
                   <span>+201146321817</span>
                 </div>
                 <div class="icons">
-                  <i
-                    class="fab fa-facebook-f"
-                    @click="open('https://www.facebook.com/hassan2231998')"
-                  />
-                  <i
-                    class="fab fa-twitter"
-                    @click="open('https://www.facebook.com/hassan2231998')"
-                  />
-                  <i
-                    class="fab fa-linkedin-in"
-                    @click="open('https://www.linkedin.com/in/hassan1998/')"
-                  />
-                  <i
-                    class="fab fa-github-alt"
-                    @click="open('https://github.com/Hassan-98')"
-                  />
+                  <i class="fab fa-facebook-f" @click="open('https://www.facebook.com/hassan2231998')" />
+                  <i class="fab fa-twitter" @click="open('https://www.facebook.com/hassan2231998')" />
+                  <i class="fab fa-linkedin-in" @click="open('https://www.linkedin.com/in/hassan1998/')" />
+                  <i class="fab fa-github-alt" @click="open('https://github.com/Hassan-98')" />
                 </div>
               </div>
             </div>
             <div class="col-md-7 col-12">
               <div class="form">
                 <input v-model="name" type="text" placeholder="Full Name" />
-                <input
-                  v-model="email"
-                  type="email"
-                  placeholder="Email Address"
-                />
-                <textarea
-                  v-model="message"
-                  cols="30"
-                  rows="7"
-                  placeholder="Type your message..."
-                />
+                <input v-model="email" type="email" placeholder="Email Address" />
+                <textarea v-model="message" cols="30" rows="7" placeholder="Type your message..." />
                 <button @click="sendMsg">Send Message</button>
               </div>
             </div>
@@ -122,15 +103,18 @@ img.background {
   height: 100px;
   opacity: var(--decoration-opacity);
 }
+
 .portfolio {
   padding: 100px 0;
   position: relative;
+
   h1 {
     text-align: center;
     text-transform: uppercase;
     font-family: "Piedra", cursive;
     position: relative;
     margin-bottom: 100px;
+
     &::after {
       content: "PORTFOLIO";
       opacity: 0.1;
@@ -143,44 +127,52 @@ img.background {
       left: 50%;
       transform: translateX(-50%);
       letter-spacing: 10px;
+
       @include md {
         font-size: 75px;
         top: -20px;
       }
+
       @include sm {
         font-size: 45px;
         top: -5px;
       }
     }
   }
+
   .contdiv {
     &:nth-of-type(even) {
       .overlay {
         transform: translateX(-600px);
       }
     }
+
     &:nth-of-type(odd) {
       .overlay {
         transform: translateX(600px);
       }
     }
   }
+
   .project {
     box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
     position: relative;
     margin-bottom: 35px;
     overflow: hidden;
     height: 550px;
+
     @include xs {
       height: 500px;
     }
-    & > img {
+
+    &>img {
       border: 5px solid #fff;
       position: relative;
       z-index: 10;
       height: 100%;
       width: 100%;
     }
+
     .overlay {
       position: absolute;
       top: 0;
@@ -193,11 +185,13 @@ img.background {
       justify-content: center;
       cursor: pointer;
       z-index: 11;
+
       i {
         font-size: 40px;
         color: #fff;
       }
     }
+
     .views {
       position: absolute;
       top: 15px;
@@ -210,11 +204,13 @@ img.background {
       background: rgba($color: #000000, $alpha: 0.7);
       color: #ccc;
       z-index: 12;
+
       i {
         font-size: 16px;
         color: #ccc;
       }
     }
+
     .caption {
       position: absolute;
       bottom: -100px;
@@ -224,6 +220,7 @@ img.background {
       box-shadow: inset 0 5px 10px rgba($color: #000000, $alpha: 0.2);
       background: rgba($color: #FFB400, $alpha: 0.85);
       border-bottom: 5px solid #aaa;
+
       h4 {
         text-align: center;
         padding: 15px 0 10px;
@@ -233,6 +230,7 @@ img.background {
         font-family: "Piedra", cursive;
         letter-spacing: 2px;
       }
+
       .langs {
         margin: 0;
         padding-bottom: 15px;
@@ -240,42 +238,50 @@ img.background {
         color: #3a3c41;
         display: flex;
         justify-content: center;
+
         .img {
-            width: 40px;
-            height: 40px;
-            margin: 0 5px;
-            padding: 5px;
-            border: 1px solid #f8c141;
-            border-radius: 15px;
-            background: #f8c141;
-            box-shadow: inset 0 0 10px rgba($color: #000000, $alpha: 0.1);
-            img {
-              width: 100%;
-              height: 100%;
-            }
+          width: 40px;
+          height: 40px;
+          margin: 0 5px;
+          padding: 5px;
+          border: 1px solid #f8c141;
+          border-radius: 15px;
+          background: #f8c141;
+          box-shadow: inset 0 0 10px rgba($color: #000000, $alpha: 0.1);
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
+
     &:hover {
       box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.3);
+
       .views {
         left: 15px;
         z-index: 99;
       }
+
       .caption {
         bottom: 0px;
         z-index: 99;
       }
+
       .overlay {
-        transform: translateX(0)!important;
+        transform: translateX(0) !important;
       }
     }
   }
 }
+
 .contact {
   background: url("/imgs/contact.webp");
   background-size: cover;
   position: relative;
+
   .decoration1 {
     background: var(--dividers-image);
     background-size: cover;
@@ -285,6 +291,7 @@ img.background {
     width: 100%;
     height: 60px;
   }
+
   .decoration2 {
     background: url("/imgs/decoration-black.png");
     background-size: cover;
@@ -296,9 +303,11 @@ img.background {
     transform: rotate(180deg);
     z-index: 99999;
   }
+
   .overlay {
     padding: 110px 0 170px;
     position: relative;
+
     h1 {
       text-align: center;
       text-transform: uppercase;
@@ -306,6 +315,7 @@ img.background {
       position: relative;
       margin-bottom: 60px;
       color: #fff;
+
       &::after {
         content: "CONTACT";
         opacity: 0.1;
@@ -318,32 +328,39 @@ img.background {
         left: 50%;
         transform: translateX(-50%);
         letter-spacing: 10px;
+
         @include md {
           font-size: 75px;
           top: -20px;
         }
+
         @include sm {
           font-size: 45px;
           top: -5px;
         }
       }
     }
+
     .info {
       @include sm {
         margin-bottom: 30px;
       }
+
       p {
         margin-top: 0;
         margin-bottom: 20px;
         color: #fff;
       }
+
       h4 {
         font-family: "Piedra", cursive;
         letter-spacing: 1.5px;
         color: #fff;
       }
+
       .way {
         margin-bottom: 20px;
+
         i {
           font-size: 20px;
           padding: 9px;
@@ -353,11 +370,13 @@ img.background {
           border-radius: 50%;
           box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.2);
         }
+
         span {
           font-size: 18px;
           color: #fff;
         }
       }
+
       .icons {
         i {
           font-size: 28px;
@@ -367,27 +386,34 @@ img.background {
           border-radius: 50%;
           color: #fff;
           box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.2);
+
           &:first-of-type {
             padding: 7px 13px;
             background: $facebook;
           }
+
           &:nth-of-type(2) {
             padding: 8px;
             background: $twitter;
           }
+
           &:nth-of-type(3) {
             background: $linkedin;
           }
+
           &:nth-of-type(4) {
             background: $github;
           }
+
           &:hover {
             transform: translateY(-2px);
           }
         }
       }
     }
+
     .form {
+
       input,
       textarea {
         display: block;
@@ -399,15 +425,18 @@ img.background {
         border-top-color: transparent;
         border-bottom-color: transparent;
         box-shadow: 0 5px 5px rgba($color: #000000, $alpha: 0.1);
+
         &::placeholder {
           color: #ccc;
         }
+
         &:focus {
           border-radius: 5px;
           border-style: solid;
           border-color: #ffb400;
         }
       }
+
       button {
         border-radius: 10px;
         background: #fff;
@@ -424,7 +453,7 @@ img.background {
 import Swal from 'sweetalert2'
 /* eslint-disable */
 export default {
-  data () {
+  data() {
     return {
       name: '',
       email: '',
@@ -444,73 +473,73 @@ export default {
     open(link) {
       window.open(link, '_blank')
     },
-    async sendMsg (e) {
-       e.target.textContent = 'Sending...';
+    async sendMsg(e) {
+      e.target.textContent = 'Sending...';
 
-       const { name, email, message } = this;
+      const { name, email, message } = this;
 
-       if (name == '' || email == '' || message == '') {
-          e.target.textContent = 'Send Message';
-          return Swal.fire({
-            icon: 'error',
-            text: 'Please fill all required fields'
-          })
-       }
+      if (name == '' || email == '' || message == '') {
+        e.target.textContent = 'Send Message';
+        return Swal.fire({
+          icon: 'error',
+          text: 'Please fill all required fields'
+        })
+      }
 
-       if (!email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
-          e.target.textContent = 'Send Message';
-          return Swal.fire({
-            icon: 'error',
-            text: 'Please enter a valid email address'
-          })
-       }
+      if (!email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+        e.target.textContent = 'Send Message';
+        return Swal.fire({
+          icon: 'error',
+          text: 'Please enter a valid email address'
+        })
+      }
 
-       if (message.length < 25) {
-          e.target.textContent = 'Send Message';
-          return Swal.fire({
-            icon: 'error',
-            text: 'Your message is too short'
-          })
-       }
+      if (message.length < 25) {
+        e.target.textContent = 'Send Message';
+        return Swal.fire({
+          icon: 'error',
+          text: 'Your message is too short'
+        })
+      }
 
-        const payload = { fullName: name, email, message }
-        var { err } = await this.$axios.post('/api/contact', payload);
+      const payload = { fullName: name, email, message }
+      var { err } = await this.$axios.post('/api/contact', payload);
 
-        if (err) {
-          e.target.textContent = 'Send Message'
-          return Swal.fire({
-            icon: 'error',
-            title: 'Failed!',
-            text: err
-          })
-        }
-
-        this.name = '';
-        this.email = '';
-        this.message = '';
-
-        Swal.fire('', 'Thank You, Your message is delivered', 'success');
-
+      if (err) {
         e.target.textContent = 'Send Message'
+        return Swal.fire({
+          icon: 'error',
+          title: 'Failed!',
+          text: err
+        })
+      }
+
+      this.name = '';
+      this.email = '';
+      this.message = '';
+
+      Swal.fire('', 'Thank You, Your message is delivered', 'success');
+
+      e.target.textContent = 'Send Message'
     }
   },
-  mounted () {
+  mounted() {
     this.$store.commit('endLoading')
   },
   filters: {
-     formatLangs (langs) {
-        return langs.split(',').join(' | ')
-     }
+    formatLangs(langs) {
+      return langs.split(',').join(' | ')
+    }
   },
-  async asyncData({ $axios })  {
-    $axios.defaults.baseURL = process.env.baseURL;
-    
-    const {success: projects} = await $axios.$get('/api/portfolio')
+  async asyncData({ $axios }) {
+    $axios.defaults.baseURL = "https://api.hassanali.tk";
+
+    const { success: projects } = await $axios.$get('/api/portfolio')
 
     const portfolio = projects.map(proj => {
-        proj.langs = proj.langs.split(",").map(lang => lang.trim())
-        return proj;
-     })
+      proj.langs = proj.langs.split(",").map(lang => lang.trim())
+      return proj;
+    })
 
     return {
       portfolio

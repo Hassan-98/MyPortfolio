@@ -117,7 +117,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://portfolio-api.hassanali94.repl.co'
+    baseURL: 'https://api.hassanali.tk'
     // baseURL: "http://localhost:4001/"
   },
   /*
