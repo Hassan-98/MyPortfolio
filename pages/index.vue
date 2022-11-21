@@ -1579,15 +1579,29 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    $axios.defaults.baseURL = "https://api.hassanali.tk"
-    const { success: projects } = await $axios.$get("/api/portfolio?limit=6");
-    const { success: skills } = await $axios.$get("/api/skills");
-    const { success: stats } = await $axios.$get("/api/stats");
-    const { success: certs } = await $axios.$get("/api/certs");
-    const { success: clients } = await $axios.$get("/api/clients");
-    const { success: exps } = await $axios.$get("/api/exps");
+    $axios.defaults.baseURL = "https://api.hassanali.tk";
 
-    const portfolio = projects.map(project => {
+    // const { success: projects } = await $axios.$get("/api/portfolio?limit=6");
+    // const { success: skills } = await $axios.$get("/api/skills");
+    // const { success: stats } = await $axios.$get("/api/stats");
+    // const { success: certs } = await $axios.$get("/api/certs");
+    // const { success: clients } = await $axios.$get("/api/clients");
+    // const { success: exps } = await $axios.$get("/api/exps");
+
+    let resources = [
+      $axios.$get("/api/portfolio?limit=6"),
+      $axios.$get("/api/skills"),
+      $axios.$get("/api/stats"),
+      $axios.$get("/api/certs"),
+      $axios.$get("/api/clients"),
+      $axios.$get("/api/exps")
+    ];
+
+    const responses = await Promise.all(resources);
+
+    const [projectsRes, skillsRes, statsRes, certsRes, clientsRes, expsRes] = responses;
+
+    const portfolio = projectsRes.success.map(project => {
       project.langs = project.langs.split(",").map(lang => lang.trim())
       return project;
     });
@@ -1595,11 +1609,11 @@ export default {
     return {
       PageData: {
         portfolio,
-        skills,
-        stats,
-        certs,
-        clients,
-        exps
+        skills: skillsRes.success,
+        stats: statsRes.success,
+        certs: certsRes.success,
+        clients: clientsRes.success,
+        exps: expsRes.success
       }
     }
   },

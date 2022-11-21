@@ -105,20 +105,14 @@ module.exports = {
    */
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/dotenv",
-    "@nuxtjs/style-resources",
-    '@nuxt/image'
+    "@nuxtjs/style-resources"
   ],
-  env: {
-    baseURL: process.env.API_URL
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
     baseURL: 'https://api.hassanali.tk'
-    // baseURL: "http://localhost:4001/"
   },
   /*
    ** Build configuration
