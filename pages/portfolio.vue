@@ -532,7 +532,7 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    $axios.defaults.baseURL = "https://api.hassanali.tk";
+    $axios.defaults.baseURL = "https://api-test.hassanali.tk";
 
     const { success: projects } = await $axios.$get('/api/portfolio')
 

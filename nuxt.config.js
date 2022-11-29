@@ -112,7 +112,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://api.hassanali.tk'
+    baseURL: 'https://api-test.hassanali.tk'
   },
   /*
    ** Build configuration
