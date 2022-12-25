@@ -112,7 +112,7 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://api-test.hassanali.tk'
+    baseURL: 'https://wild-tan-sturgeon-wear.cyclic.app'
   },
   /*
    ** Build configuration
