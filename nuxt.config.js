@@ -1,5 +1,8 @@
 /* eslint-disable */
 module.exports = {
+  env: {
+    NODE_OPTIONS: "--openssl-legacy-provider"
+  },
   head: {
     htmlAttrs: {
       lang: 'en'
