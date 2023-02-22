@@ -1579,7 +1579,7 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    $axios.defaults.baseURL = "https://wild-tan-sturgeon-wear.cyclic.app";
+    $axios.defaults.baseURL = "https://v2.api.hassanali.tk";
 
     // const { success: projects } = await $axios.$get("/api/portfolio?limit=6");
     // const { success: skills } = await $axios.$get("/api/skills");

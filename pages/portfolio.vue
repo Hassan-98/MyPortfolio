@@ -21,8 +21,8 @@
       <div class="container">
         <h1>My Portfolio</h1>
         <div class="row justify-content-center">
-          <div v-for="project in portfolio" :key="project._id" class="col-lg-4 col-md-6 col-12 contdiv"
-            data-aos="fade-up" data-aos-duration="1000">
+          <div v-for="project in portfolio" :key="project._id" class="col-lg-4 col-md-6 col-12 contdiv" data-aos="fade-up"
+            data-aos-duration="1000">
             <div class="project">
               <img alt="project thumbnail" :src="project.thumb">
               <div class="overlay" @click="openProject(project.url, project._id)">
@@ -532,7 +532,7 @@ export default {
     }
   },
   async asyncData({ $axios }) {
-    $axios.defaults.baseURL = "https://wild-tan-sturgeon-wear.cyclic.app";
+    $axios.defaults.baseURL = "https://v2.api.hassanali.tk";
 
     const { success: projects } = await $axios.$get('/api/portfolio')
 
